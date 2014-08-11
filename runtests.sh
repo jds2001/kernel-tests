@@ -84,6 +84,7 @@ echo "Test set: $testset" >> $logfile
 echo "Kernel: $kver" >> $logfile
 echo "Release: $release" >> $logfile
 echo "Result: RESULTHOLDER" >> $logfile
+./utils/hwinfo.sh >> $logfile
 echo "============================================================" >>$logfile
 
 
