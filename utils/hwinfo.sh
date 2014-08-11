@@ -12,8 +12,6 @@ if [ $EUID -eq 0 ] ; then
 	/usr/sbin/dmidecode -s bios-release-date
 	echo -n "Processor: "
 	/usr/sbin/dmidecode -s processor-version
-	echo -n "Fedora relase: "
-	/usr/bin/cat /etc/fedora-release
 	echo -n "gcc version: "
 	rpm -q gcc
 	echo -n "glibc version: "
