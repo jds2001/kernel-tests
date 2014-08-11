@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Licensed under the terms of the GNU GPL License version 2
 
 ARCH=$(uname -m)
 if [ $EUID -eq 0 ] ; then
