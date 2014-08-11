@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ARCH=$(uname -m)
 if [ $EUID -eq 0 ] ; then
 	echo -n "System Manufaturer: "
 	/usr/sbin/dmidecode -s system-manufacturer
@@ -11,6 +12,15 @@ if [ $EUID -eq 0 ] ; then
 	/usr/sbin/dmidecode -s bios-release-date
 	echo -n "Processor: "
 	/usr/sbin/dmidecode -s processor-version
+	echo -n "Fedora relase: "
+	/usr/bin/cat /etc/fedora-release
+	echo -n "gcc version: "
+	rpm -q gcc
+	echo -n "glibc version: "
+	rpm -q glibc.$ARCH
+	echo -n "Virtualization: "
+	/usr/bin/systemd-detect-virt
+
 else
 	echo "Must be root to gather system info"
 	exit 3
